@@ -28,7 +28,6 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home">
-      {/* Replace the FeaturedCollection image with the video */}
       <Link className="featured-collection" to={`/collections/${data.featuredCollection.handle}`}>
         <video controls width="100%" height="auto" autoPlay muted>
           <source src={solstarVideo} type="video/mp4" />
