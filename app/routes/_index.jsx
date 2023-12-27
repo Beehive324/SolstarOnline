@@ -29,7 +29,7 @@ export default function Homepage() {
   return (
     <div className="home">
       <Link className="featured-collection" to={`/collections/${data.featuredCollection.handle}`}>
-        <video controls width="100%" height="auto" autoPlay muted>
+        <video controls width="100%" height="auto" autoPlay muted loop>
           <source src={solstarVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
