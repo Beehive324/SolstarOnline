@@ -8,7 +8,7 @@ import solstarVideo from '../video/solstar_edit.mp4';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{ title: 'Hydrogen | Home' }];
+  return [{ title: 'SolstarOnline' }];
 };
 
 /**
@@ -29,11 +29,12 @@ export default function Homepage() {
   return (
     <div className="home">
       <Link className="featured-collection" to={`/collections/${data.featuredCollection.handle}`}>
-        <video controls width="100%" height="auto" autoPlay muted loop>
+        <video  width="100%" height="auto" autoPlay muted loop>
           <source src={solstarVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Link>
+      
 
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
