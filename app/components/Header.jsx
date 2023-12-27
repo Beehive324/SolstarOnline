@@ -49,9 +49,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
           prefetch="intent"
           style={activeLinkStyle}
           to="/"
-        >
-          Home
-        </NavLink>
+        ></NavLink>
       )}
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
