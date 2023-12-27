@@ -1,16 +1,18 @@
-import {Await, NavLink} from '@remix-run/react';
-import {Suspense} from 'react';
-import {useRootLoaderData} from '~/root';
+import { Await, NavLink } from '@remix-run/react';
+import { Suspense } from 'react';
+import { useRootLoaderData } from '~/root';
+import myLogo from '../images/Solstarlogo.jpg';
 
 /**
  * @param {HeaderProps}
  */
-export function Header({header, isLoggedIn, cart}) {
-  const {shop, menu} = header;
+export function Header({ header, isLoggedIn, cart }) {
+  const { shop, menu } = header;
+  
   return (
     <header className="header">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+        <img src={myLogo} alt="Solstar Logo" style={{ maxWidth: '100px' }} />
       </NavLink>
       <HeaderMenu
         menu={menu}

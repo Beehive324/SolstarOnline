@@ -176,6 +176,7 @@ aside li {
 * components/Footer
 * --------------------------------------------------
 */
+/*
 .footer {
   background: var(--color-dark);
   margin-top: auto;
@@ -196,6 +197,7 @@ aside li {
 .footer-menu a {
   color: var(--color-light);
 }
+/*
 
 /*
 * --------------------------------------------------
@@ -318,15 +320,19 @@ aside li {
 .featured-collection img {
   height: auto;
   max-height: 100%;
-  object-fit: cover;
+  object-fit: none;
+  
 }
 
 .recommended-products-grid {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
+  font-family: sans-serif;
+  font-size: rem;
   @media (min-width: 45em) {
     grid-template-columns: repeat(4, 1fr);
+
   }
 }
 
