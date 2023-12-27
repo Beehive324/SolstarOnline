@@ -1,26 +1,26 @@
-import {defer} from '@shopify/remix-oxygen';
-import {Await, useLoaderData, Link} from '@remix-run/react';
-import {Suspense} from 'react';
-import {Image, Money} from '@shopify/hydrogen';
-
+import { defer } from '@shopify/remix-oxygen';
+import { Await, useLoaderData, Link } from '@remix-run/react';
+import { Suspense } from 'react';
+import { Image, Money } from '@shopify/hydrogen';
+import solstarVideo from '../video/solstar_edit.mp4';
 
 /**
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Hydrogen | Home'}];
+  return [{ title: 'Hydrogen | Home' }];
 };
 
 /**
  * @param {LoaderFunctionArgs}
  */
-export async function loader({context}) {
-  const {storefront} = context;
-  const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
+export async function loader({ context }) {
+  const { storefront } = context;
+  const { collections } = await storefront.query(FEATURED_COLLECTION_QUERY);
   const featuredCollection = collections.nodes[0];
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
 
-  return defer({featuredCollection, recommendedProducts});
+  return defer({ featuredCollection, recommendedProducts });
 }
 
 export default function Homepage() {
@@ -28,7 +28,14 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home">
-      <FeaturedCollection collection={data.featuredCollection} />
+      {/* Replace the FeaturedCollection image with the video */}
+      <Link className="featured-collection" to={`/collections/${data.featuredCollection.handle}`}>
+        <video controls width="100%" height="auto" autoPlay muted>
+          <source src={solstarVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </Link>
+
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
   );
