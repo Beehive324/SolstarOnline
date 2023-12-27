@@ -2,6 +2,8 @@ import { Await, NavLink } from '@remix-run/react';
 import { Suspense } from 'react';
 import { useRootLoaderData } from '~/root';
 import myLogo from '../images/Solstarlogo.jpg';
+import shoplogo from '../images/shopping-bag-icon.png'
+import searchlogo from '../images/search-line-icon.png'
 
 /**
  * @param {HeaderProps}
@@ -106,16 +108,24 @@ function HeaderMenuMobileToggle() {
 }
 
 function SearchToggle() {
-  return <a href="#search-aside">Search</a>;
+  return (
+    <a href="#search-aside">
+      <img src={searchlogo} alt="Search Icon" style={{ width: '17px', height: '17px' }} />
+    </a>
+  );
 }
 
 /**
  * @param {{count: number}}
  */
-function CartBadge({count}) {
-  return <a href="#cart-aside">Cart {count}</a>;
+function CartBadge({ count }) {
+  return (
+    <a href="#cart-aside" >
+      <img src={shoplogo} alt="Cart" style={{ width: '17px', height: '17px' }} />
+      &nbsp;{count}
+    </a>
+  );
 }
-
 /**
  * @param {Pick<HeaderProps, 'cart'>}
  */

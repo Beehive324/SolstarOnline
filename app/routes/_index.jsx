@@ -3,6 +3,7 @@ import { Await, useLoaderData, Link } from '@remix-run/react';
 import { Suspense } from 'react';
 import { Image, Money } from '@shopify/hydrogen';
 import solstarVideo from '../video/solstar_edit.mp4';
+import video1 from '../video/3d.mp4';
 
 /**
  * @type {MetaFunction}
