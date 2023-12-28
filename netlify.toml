@@ -19,5 +19,6 @@ for = "/build/*"
 # These are only used to set up the template, and are not used in the build
 # If you want to update the real values, change them in the site UI or CLI
 [template.environment]
-PUBLIC_STORE_DOMAIN = "solstaronline.myshopify.com""
-SESSION_SECRET = "foobar"
+SESSION_SECRET="foobar"
+PUBLIC_STOREFRONT_API_TOKEN="b26423b22a1093becbb94137a2ee8cbd"
+PUBLIC_STORE_DOMAIN="solstaronline.myshopify.com"
